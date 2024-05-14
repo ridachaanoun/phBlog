@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Encode+Sans+Expanded:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-bo;
+    list-style-type: none;
+    font-family: "roboto";
+    color: black;
+    text-decoration: none;
+}
+main{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+main div{
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    background-color: rgb(255, 0, 0);
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+    gap: 50px;
+    width: 650px;
+    transition: 0.7s;
+}
+main :hover{
+    box-shadow: 3px 3px 3px 3px;
+}
+main div p{
+    width: 350px;
+    text-align-last: center;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    transition: 0.7s;
+}
+main div a{
+    font-size: 25px;
+    font-weight: 700;
+    border: solid;
+    width: 130px;
+    background: black;
+    color:antiquewhite;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+main div a:hover{
+    transform: scale(1.1); 
+    box-shadow: none;
+}
