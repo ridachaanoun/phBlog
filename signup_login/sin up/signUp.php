@@ -1,5 +1,5 @@
 <?php
-require "../connection.php";
+require "../../connection.php";
 
 // Check if form is submitted
 if(isset($_POST['add'])){ 

@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/log-in.css">
 </head>
-<body>
+<body><a href="../../connection.php"></a>
     <header>
         <nav>
             <ul class="About-us">
@@ -25,7 +25,7 @@
             <h2 class="logo"><a href=""> Logo</a></h2>
             <span class="sign-up"> <a href="../sin up/sign-up.php">Sign Up</a> </span>
         </nav>
-        
+
     </header>
     <main>
         <section>
