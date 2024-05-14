@@ -24,7 +24,7 @@
             </li>
 
             </ul>
-            <span class="sign-up"> <a href="http://127.0.0.1:5500/signUp.html">Sign Up</a> </span>
+            <span class="sign-up"> <a href="signup_login/sin up/sign-up.php">Sign Up</a> </span>
         </nav>
     </header>
         <main>
