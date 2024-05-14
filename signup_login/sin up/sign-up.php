@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="../css/sing-up.css">
 </head>
 <body>
     <header>
@@ -23,22 +23,30 @@
 
             </ul>
             <h2 class="logo"><a href=""> Logo</a></h2>
-            <span class="sign-up"> <a href="http://127.0.0.1:5500/signUp.html">Sign Up</a> </span>
+            <span class="sign-up"> <a href="../log in/log-in.php">Log in</a> </span>
         </nav>
 
     </header>
     <main>
         <section>
-            <img class="welcome" src="img/images.jpeg" alt="">
-            <p class="log-in">Log in</p>
-            <p class="log-in-now">Log in now </p>
-            <p class="enter-ur-inf">enter your email and password to login. </p>
-            <form action="">
+            <img class="welcome" src="../img/images.jpeg" alt="">
+            <p class="log-in">Sign Up</p>
+            <p class="log-in-now">Sin Up now </p>
+            <p class="enter-ur-inf">enter your username / email and password to sign up.  </p>
+            <form action="signUp.php" method="post">
+
+            <?php
+                if(isset($_GET['error'])) {?>
+                    <p class="error"><?php echo $_GET['error']; ?></p>
+            <?php } ?>
+
+                <label  for="username">Username</label>
+                <input  type="text" id="username" name="username">
                 <label  for="email">Email</label>
-                <input  type="email" id="email">
+                <input  type="email" id="email" name="email">
                 <label  for="password">Password</label>
-                <input  type="password">
-                <input  class="submit"type="submit" value="Log in">
+                <input  type="password" name="pass">
+                <input  class="submit"type="submit" value="Sign Up" name="add">
             </form>
         </section>
     </main>

@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Encode+Sans+Expanded:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    font-family: "roboto";
+    color: black;
+    text-decoration: none;
+}
+/* header{
+    position: fixed;
+    width: 100%;
+} */
+nav{
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    align-items: center;
+    padding: 0 40px;
+    border-bottom: solid black 1px;
+    background-color: rgb(255, 255, 255);
+}
+.About-us{
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+    align-items: center;
+}
+select{
+    border: none;
+}
+.logo{
+    padding-right: 50px;
+}
+.welcome{
+    width: 700px;
+}
+.sign-up{
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    width: 80px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+}
+.sign-up a{
+    color: aliceblue
+}
+.profile{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.topdiv{
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    justify-content: space-between;
+    width: 45vw;
+    margin-top: 100px;
+
+
+}
+.informaition{
+    display: flex;
+    justify-content: space-between;
+}
+.informaition div{
+    display: flex;
+}
+.topdiv ul{
+    display: flex;
+    width: 150px;
+    justify-content: space-around;
+    align-items: center;
+}
+.title{
+    font-size: 3vw;
+    font-weight: 600;
+}
+.blogimg {
+    width: 100%;
+}
+.blog-content{
+display: flex;
+margin-top: 100px;
+flex-direction: column;
+align-items: center;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+.blacklike-and-comment{
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+}
+.center-line{
+    width: 95%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.508);
+}
+.whitelike-and-comment{
+    width: 90%;
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+.whitelike-and-comment span{
+    gap: 7px;
+}
+.blog-content span {
+    display: flex;
+    align-items: center;
+}
+.content{
+     width: 40%;
+}
+.Join_the_Conversation{
+    background-color:grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-top: 30px;
+    margin-top: 120px;
+    height: 230px;
+}
+.Join{
+    font-size: 45px;
+    color: aliceblue;
+    font-weight: 500;
+}
+.Share{
+    color: rgba(255, 255, 255, 0.915);
+}
+.btn-container{
+    display: flex;
+    gap: 15px;
+}
+.comment-btn{
+    background-color: black;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 40px;
+}
+.like-btn{
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 40px;
+    border: solid whitesmoke 1px;
+}
+.add-comment{
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 50px;
+    margin-top: 100px;
+}
+.commentes{
+    font-size: 30px;
+    font-weight: 800;
+}
+.submit-comment{
+    font-size: 17px;
+    font-weight: 500;
+}
+textarea{
+    width: 400px;
+    background-color: #00000020;
+}
+.name, .email{
+    width: 250px;
+    height: 27px;
+    background-color: #00000020;
+}
+/* ///// */
+footer{
+    display: flex;
+    justify-content: center;
+    margin-top: 85px;
+}
+footer ul{
+    display: flex;
+    gap: 24px;
+    text-decoration: underline;
+}
+footer .last-div{
+    display: flex;
+    width: 95%;
+    justify-content: space-between;
+    border-top: solid #000000 1px;
+    align-items: center;
+    height: 80px;
+}

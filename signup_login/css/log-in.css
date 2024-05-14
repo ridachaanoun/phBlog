@@ -14,7 +14,6 @@ header{
     width: 100%;
 }
 nav{
-
     display: flex;
     justify-content: space-between;
     height: 50px;
@@ -108,4 +107,9 @@ footer .last-div{
     border-top: solid #00000055 1px;
     align-items: center;
     height: 80px;
+}
+.error{
+    color: red;
+    font-weight: 500;
+    font-size: 18px;
 }
