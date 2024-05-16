@@ -1,0 +1,118 @@
+.container {
+    width: 80%;
+    margin: 0 auto;
+   overflow-y: auto;
+}
+
+section{
+    position: absolute;
+    margin-top: 200px;
+    margin-left: 305px;
+}
+.articles-table{
+    margin-top: 160px;
+    width: 78%;
+    margin-left: 130px;
+    z-index: -1;
+    position: absolute;
+  
+}
+table {
+    
+   
+    height: 100px;
+    border-collapse: collapse;
+    border-radius: 20px;
+}
+img{
+    width: 80px;
+}
+thead th {
+    background-color: #ffffff;
+    
+}
+
+tbody tr:nth-child(even) {
+    background-color: #fff;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #ccc;
+}
+
+
+td, th {
+    padding: 10px;
+
+}
+td form{
+   
+   display: flex;
+}
+td form svg{
+    color: #54AE88;
+}
+table {
+    z-index: 1000;
+    max-height: calc(100vh - 60px); /* Adjust according to your navbar height */
+    overflow-y: auto;
+}
+
+
+ .pagination {
+    position: absolute;
+    margin-top: 550px;
+    text-align: center;
+    margin-left: 600px;
+    color: #007bff;
+}
+
+ .pagination a {
+    border-radius: 60px;
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    color: #333;
+}
+ .pagination a:hover{
+    cursor: pointer;
+}
+.pagination a.active {
+    border-radius: 60px;
+    background-color: #007bff;
+    color: #fff;
+    border: 1px solid #007bff;
+}
+.container .th a button{
+    border: 1px solid  #007bff;
+    color: black;
+    width: 85px;
+    height: 30px;
+    background-color:  #007bff;
+    font-weight: bolder;
+    font-size: 13px;
+    border-radius: 7px;
+    margin-left: 85%;
+}
+.forms{
+    display: flex;
+    padding: 5px;
+}
+.forms button{
+    padding: 5px;
+    border: 1px solid white;
+}
+.container tbody tr button {
+    border: none; /* Remove border */
+    border-radius: 0; /* Optionally remove border radius */
+    border-width: 0; /* Optionally set border width to 0 */
+    outline: none; /* Optionally remove outline on focus */
+    background-color:white;
+    width: 0px;
+    height: 0px;
+}
+tbody tr:nth-child(odd) button {
+    background-color: #ccc;
+}
