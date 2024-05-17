@@ -35,10 +35,10 @@ if(isset($_POST['add'])){
             if($pass == $hashed_password) {
                 // Password is correct
                 echo "Password is correct";
-                $session["username"] = $row["username"];
-                $session["ID_user"] = $row["ID_user"];
-                $session["role"] = $row["role"];
-                header("location: ../Blog-Post.php");
+                $_SESSION["username"] = $row["username"];
+                $_SESSION["ID_user"] = $row["ID_user"];
+                $_SESSION["role"] = $row["ID_role"];
+                header("location: ../../index.php");
             } else {
                 // Password is incorrect
                 header("location: log-in.php.?error=assword is incorrect!!!");

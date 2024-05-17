@@ -5,48 +5,43 @@ session_start();
 // add like 
 if(isset($_POST["like"])){
     try {
-
+        $insert = $conn->prepare("INSERT INTO likes (ID_user, ID_arti) VALUES (:ID_user, :ID_arti)");
+        $insert->execute([
+            ':ID_user' => $_SESSION["ID_user"],
+            ':ID_arti' => $_SESSION["id_art"]
+        ]);
+        // echo "Like added successfully";
+echo "good";
+        ////
         $check_id = $conn->prepare("SELECT * FROM likes WHERE ID_arti = :id_arti AND ID_user = :ID_user" );
         $check_id->execute([
             ':id_arti' => $_SESSION["id_art"],
             ':ID_user' => $_SESSION["ID_user"]
         ]);
+        
+   
+        $check_like = $conn->prepare("SELECT * FROM likes WHERE ID_arti = :id_arti AND ID_user = :ID_user" );
+        $check_like->execute([
+            ':id_arti' => $_SESSION["id_art"],
+            ':ID_user' => $_SESSION["ID_user"]
+        ]);
 
-        if($check_id->rowCount()>0){
-            
-            // delet like 
-            $check_like = $conn->prepare("DELETE  FROM likes WHERE ID_arti = :id_arti AND ID_user = :ID_user" );
-            $check_like->execute([
-                ':id_arti' => $_SESSION["id_art"],
-                ':ID_user' => $_SESSION["ID_user"]
-            ]);
-            $style = "    <style>
-            .liked {
-                background-color: rgb(255, 0, 0);
-                color: white;
-            }
-        </style>";
+echo $check_like->rowCount();
 
-        }else{
-            $insert = $conn->prepare("INSERT INTO likes (ID_user, ID_arti) VALUES (:ID_user, :ID_arti)");
-            $insert->execute([
-                ':ID_user' => $_SESSION["ID_user"],
-                ':ID_arti' => $_SESSION["id_art"]
-            ]);
-            echo "Like added successfully";
+        // if($check_like->rowCount()>0){
+        //     $delete_like = $conn->prepare("DELETE FROM likes WHERE  ID_arti = :id_arti AND ID_user = :ID_user"
+        // }
 
-        }
+        
 
     } catch (PDOException $e) {
         die("Error adding like: " . $e->getMessage());
     }
 
 }
-// count likes 
-$likeStmt = $conn->prepare("SELECT * FROM likes WHERE ID_arti = :id_arti");
-$likeStmt->execute([':id_arti' => $_SESSION["id_art"]]);
-$userLiked  = $likeStmt->rowCount();
 
+echo "<br>SESSION -> " . $_SESSION["ID_user"];
+echo "<br>SESSION -> " . $_SESSION["id_art"];
 
 // Fetch article data
 $articleStmt = $conn->prepare("SELECT * FROM articles WHERE ID_arti = :id_arti");
@@ -85,6 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         ]);
     }
 }
+
 // Fetch category data
 $categoryStmt = $conn->prepare("SELECT * FROM categories WHERE ID_Category = :id_category");
 $categoryStmt->execute([':id_category' => $articles_row["ID_Category"]]);
@@ -104,7 +100,7 @@ $commentsStmt = $conn->prepare("
 $commentsStmt->execute([':id_arti' => $_SESSION["id_art"]]);
 $comments = $commentsStmt->fetchAll(PDO::FETCH_OBJ);
 
-$style =""
+
 ?>
 
 
@@ -124,13 +120,16 @@ $style =""
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Blog</a></li>
                 <li>
-
+                    <select>
+                        <option value="english">Services</option>
+                        <option value="english"></option>
+                        <option value="english"></option>
+                    </select>
                 </li>
             </ul>
             <h2 class="logo"><a href=""> Logo</a></h2>
             <span class="sign-up"> <a href="signUp.html">Main</a> </span>
         </nav>
-        <?php echo $style ;?>
     </header>
     <main>
         <section class="profile">
@@ -143,6 +142,7 @@ $style =""
                 <p class="title"><?php echo $articles_row["Titre"]; ?></p>
                 <div class="informaition">
                     <div>
+                        <img src="" alt="nothing">
                         <span>
                             <h6><?php echo $user_row["username"]; ?></h6>
                             <p><?php echo $articles_row["Date_created"]; ?></p>
@@ -164,8 +164,8 @@ $style =""
                 <img class="blogimg" src="img/blogimg" alt="">
                 <div class="blacklike-and-comment">
                     <!-- show likeCount -->
-                    <span><img src="icons/black-like.svg" alt=""><?php echo $userLiked ;?></span>
-                    <span><img src="icons/black-comment.svg" alt=""></span>
+                    <span><img src="icons/black-like.svg" alt=""><?php echo $likeCount;?></span>
+                    <span><img src="icons/black-comment.svg" alt=""><?php echo $likeCount;?></span>
                 </div>
             </div>
             <hr class="center-line">
@@ -173,10 +173,10 @@ $style =""
 
                 <!-- add like -->
                 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-                    <button type="submit" name="like" class="liked"> <span><img src="icons/white-like.svg" alt="">like</span></button>
+                    <button type="submit" name="like"> <span><img src="icons/white-like.svg" alt="">like</span></button>
                 </form>
 
-                    
+                    <span><img src="icons/white-comment.svg" alt="">comment</span>
             </div>
             <div class="content">
                 <p><?php echo $articles_row["Contenu_arti"]; ?></p>
@@ -223,6 +223,6 @@ $style =""
                 <li>Cookies Settings</li>
             </ul>
         </div>
-
+    </footer>
 </body>
 </html>
