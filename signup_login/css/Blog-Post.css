@@ -88,6 +88,7 @@ display: flex;
 margin-top: 100px;
 flex-direction: column;
 align-items: center;
+
 }
 .container{
     display: flex;
@@ -120,6 +121,11 @@ align-items: center;
 }
 .content{
      width: 40%;
+     margin: 20px auto;
+     background-color: #fff;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     padding: 20px;
+     border-radius: 8px;
 }
 .Join_the_Conversation{
     background-color:grey;
@@ -204,4 +210,46 @@ footer .last-div{
     border-top: solid #000000 1px;
     align-items: center;
     height: 80px;
+}
+.comment-section {
+    width: 90%;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    overflow-y: scroll;
+    height: 500px;
+}
+
+.comment {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+}
+
+.comment h6 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
+
+.comment p {
+    margin: 5px 0;
+    color: #555;
+    line-height: 1.4;
+}
+
+.comment small {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+}
+
+.comment:last-child {
+    border-bottom: none;
 }
