@@ -1,112 +1,4 @@
 <?php
-require "../connection.php";
-session_start();
-
-// add like 
-if(isset($_POST["like"])){
-    try {
-
-        $check_id = $conn->prepare("SELECT * FROM likes WHERE ID_arti = :id_arti AND ID_user = :ID_user" );
-        $check_id->execute([
-            ':id_arti' => $_SESSION["id_art"],
-            ':ID_user' => $_SESSION["ID_user"]
-        ]);
-
-        if($check_id->rowCount()>0){
-            
-            // delet like 
-            $check_like = $conn->prepare("DELETE  FROM likes WHERE ID_arti = :id_arti AND ID_user = :ID_user" );
-            $check_like->execute([
-                ':id_arti' => $_SESSION["id_art"],
-                ':ID_user' => $_SESSION["ID_user"]
-            ]);
-            $style = "    <style>
-            .liked {
-                background-color: rgb(255, 0, 0);
-                color: white;
-            }
-        </style>";
-
-        }else{
-            $insert = $conn->prepare("INSERT INTO likes (ID_user, ID_arti) VALUES (:ID_user, :ID_arti)");
-            $insert->execute([
-                ':ID_user' => $_SESSION["ID_user"],
-                ':ID_arti' => $_SESSION["id_art"]
-            ]);
-            echo "Like added successfully";
-
-        }
-
-    } catch (PDOException $e) {
-        die("Error adding like: " . $e->getMessage());
-    }
-
-}
-// count likes 
-$likeStmt = $conn->prepare("SELECT * FROM likes WHERE ID_arti = :id_arti");
-$likeStmt->execute([':id_arti' => $_SESSION["id_art"]]);
-$userLiked  = $likeStmt->rowCount();
-
-
-// Fetch article data
-$articleStmt = $conn->prepare("SELECT * FROM articles WHERE ID_arti = :id_arti");
-$articleStmt->execute([':id_arti' => $_SESSION["id_art"]]);
-$articles_row = $articleStmt->fetch(PDO::FETCH_ASSOC);
-
-if (!$articles_row) {
-    die("Error fetching article data");
-}
-
-// Fetch user data
-$userStmt = $conn->prepare("SELECT * FROM users WHERE ID_user = :id_user");
-$userStmt->execute([':id_user' => $articles_row["ID_user"]]);
-$user_row = $userStmt->fetch(PDO::FETCH_ASSOC);
-
-if (!$user_row) {
-    die("Error fetching user data");
-}
-
-// Add comment
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $comment = $_POST['comment'];
-    $response = [];
-
-    if (empty($comment)) {
-        $response['status'] = 'error';
-        $response['message'] = 'Comment cannot be empty.';
-        header("location:Blog-Post.php.?error=".$response['message']);
-    } else {
-        $insert = $conn->prepare("INSERT INTO comments (Contenu_com, ID_user, ID_arti, Date_created_com) VALUES (:Contenu_com, :ID_user, :ID_arti, :Date_created_com)");
-        $insert->execute([
-            ':Contenu_com' => $comment,
-            ':ID_user' => $_SESSION["ID_user"],
-            ':ID_arti' => $_SESSION["id_art"],
-            ':Date_created_com' => date("Y-m-d")
-        ]);
-    }
-}
-// Fetch category data
-$categoryStmt = $conn->prepare("SELECT * FROM categories WHERE ID_Category = :id_category");
-$categoryStmt->execute([':id_category' => $articles_row["ID_Category"]]);
-$category_row = $categoryStmt->fetch(PDO::FETCH_ASSOC);
-
-if (!$category_row) {
-    die("Error fetching category data");
-}
-
-// Fetch comments along with the username of the user who posted the comment
-$commentsStmt = $conn->prepare("
-    SELECT comments.*, users.username 
-    FROM comments 
-    JOIN users ON comments.ID_user = users.ID_user 
-    WHERE comments.ID_arti = :id_arti
-");
-$commentsStmt->execute([':id_arti' => $_SESSION["id_art"]]);
-$comments = $commentsStmt->fetchAll(PDO::FETCH_OBJ);
-
-$style =""
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -117,7 +9,7 @@ $style =""
     <title>Document</title>
     <link rel="stylesheet" href="css/Blog-Post.css">
 </head>
-<body>
+
     <header>
         <nav>
             <ul class="About-us">
@@ -128,6 +20,9 @@ $style =""
                 </li>
             </ul>
             <h2 class="logo"><a href=""> Logo</a></h2>
+            <span class="profile">
+                <a href="/phBlog/signup_login/profile/show.php?ID_user=<?php echo htmlspecialchars($ID_user); ?>" class="text-gray-700 hover:text-gray-900">Edit Profile</a>
+            </span>
             <span class="sign-up"> <a href="signUp.html">Main</a> </span>
         </nav>
         <?php echo $style ;?>

@@ -26,7 +26,7 @@
 
         <div class="logout">
             <h5 id="admin">Admin</h5>
-            <h5><a href="#"><img class="img" src="./images/image.png">&nbsp;Logout</a></h5>
+            <h5><a href="./logout.php"><img class="img" src="./images/image.png">&nbsp;Logout</a></h5>
             <img id="setting" class="img" src="./images/setting-svg.png">
         </div>
 
