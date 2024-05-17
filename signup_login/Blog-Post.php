@@ -223,6 +223,6 @@ $style =""
                 <li>Cookies Settings</li>
             </ul>
         </div>
-    </footer>
+
 </body>
 </html>

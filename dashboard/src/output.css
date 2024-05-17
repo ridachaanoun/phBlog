@@ -1,0 +1,109 @@
+body{
+  display: flex;
+}
+
+.sidbare {
+  height: 100vh;
+  width: 19vw;
+  margin: 0px;
+  padding: 0px;
+  top: 0;
+  background-color: #05085E;
+  position: absolute;
+  left: 0vw;
+  top: 0vw;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+ul li {
+  left: 0px;
+  text-decoration: none;
+  list-style: none;
+  color: white;
+  padding: 15px;
+  transition: background-color 0.3s;
+  /* Add transition for smooth color change */
+}
+
+ul li:hover {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+li a img {
+  width: 2.6vw;
+  height: 5.3vh;
+  border-radius: 5px;
+}
+
+li a {
+  display: flex;
+}
+
+li a span {
+  padding: 10px;
+}
+
+.nav {
+  position: relative;
+  margin-bottom: 80px;
+}
+
+.nav .hello {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 12px;
+  margin-bottom: 30px;
+}
+
+.nav p {
+  margin: 0;
+  /* Remove default margin of paragraph */
+}
+
+ul li p {
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  margin-right: 90px;
+}
+
+.candy {
+  color: #BEBEBE;
+}
+
+.sidbare hr {
+  left: 0px;
+  width: 100%;
+  Top: 100px;
+  border: none;
+  border-top: 1px solid white;
+  position: absolute;
+}
+
+ul .items {
+  position: absolute;
+  right: 20px;
+  margin-top: 16px;
+}
+
+ul li.clicked {
+  right: 20px;
+  width: 190px;
+  height: 33px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  /* Change background color when clicked */
+}
+
+.sidbare ul li.clicked span {
+  color: black;
+  /* Change text color when clicked */
+}
