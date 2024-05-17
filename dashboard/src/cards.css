@@ -1,0 +1,97 @@
+.containerr {
+    position: relative; 
+    max-width: 1320px;
+    margin-left: 260px; /* Add margin to push it near the content */
+}
+.f {
+    display: flex;
+    padding: 20px;
+}
+.f h3{
+    margin-top: 30px;
+margin-left: 90px;
+font-weight: bolder;
+font-size: 20px;
+}
+.card {
+    width: 290px;
+    height: 70px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 65px;
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333333;
+}
+.card img{
+    border-radius: 10px;
+    width: 85px;
+}
+
+@media (min-width: 640px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+.cardd {
+    margin-left: 40px;
+    width: 240px;
+    height: 140px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.cardd h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.cardd p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333333;
+}
+.cardd img{
+    border-radius: 10px;
+    width: 85px;
+}
+.cardd img{
+    margin-left: 30px;
+    width: 160px;
+    height: 100px;
+    border-radius: 10px;
+}
+.cardd button{
+   border: 1px solid #040985;
+   width: 120px;
+   margin-top: 10px;
+   color: white;
+  margin-left: 50px;
+   font-weight: bolder;
+    height: 30px;
+    background-color: #040985;
+    border-radius: 80px;
+}
