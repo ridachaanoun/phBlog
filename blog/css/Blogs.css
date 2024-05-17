@@ -1,0 +1,149 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+nav .sign-up a {
+    color: white;
+    background-color: black;
+    width: 100px;
+    padding: 10px 10px 10px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.inline-flex{
+    margin-left: 510px;
+}
+
+main {
+    padding-top: 100px; /* Adjust to accommodate fixed header */
+    padding: 20px;
+}
+
+.Third-section {
+    margin-top: 5%;
+    margin-bottom: 10%;
+    text-align: center;
+}
+
+.Third-section h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.Third-section h1 {
+    font-size: 48px;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.Third-section h2 {
+    font-size: 25px;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.cards2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.card-1 {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+}
+
+.card-body h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+    padding: 0 16px;
+}
+
+.card-body .card-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0 16px 16px;
+}
+
+.Categories h5 {
+    margin: 0;
+    padding: 16px;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.Read-more {
+    margin: 0 16px 16px;
+    color: #007BFF;
+    cursor: pointer;
+}
+
+.title-2 {
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    justify-content: center;
+}
+
+.title-2 h1 {
+    font-size: 48px;
+}
+
+.title-2 h3 {
+    font-size: 20px;
+    font-weight: 400;
+}

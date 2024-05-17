@@ -1,3 +1,31 @@
+<?php
+session_start();
+
+// Check if the ID_user is set in the session
+if(isset($_SESSION['ID_user'])) {
+    // Retrieve the ID_user from the session
+    $ID_user = $_SESSION['ID_user'];
+
+    // Fetch user data
+    require "../connection.php";
+    $userStmt = $conn->prepare("SELECT * FROM users WHERE ID_user = :id_user");
+    $userStmt->execute([':id_user' => $ID_user]);
+    $user_row = $userStmt->fetch(PDO::FETCH_ASSOC);
+
+    // Check if user data is fetched successfully
+    if($user_row) {
+        $username = $user_row['username'];
+    } else {
+        // If user data is not found, handle the error
+        $username = "Unknown";
+    }
+} else {
+    // If the ID_user is not set in the session, redirect the user to the login page
+    header("location: ../log-in.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +35,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/Blog-Post.css">
 </head>
+
 <body><a href=""></a>
     <header>
         <nav>
@@ -23,6 +52,9 @@
 
             </ul>
             <h2 class="logo"><a href=""> Logo</a></h2>
+            <span class="profile">
+                <a href="/phBlog/signup_login/profile/show.php?ID_user=<?php echo htmlspecialchars($ID_user); ?>" class="text-gray-700 hover:text-gray-900">Edit Profile</a>
+            </span>
             <span class="sign-up"> <a href="signUp.html">Main</a> </span>
         </nav>
 
