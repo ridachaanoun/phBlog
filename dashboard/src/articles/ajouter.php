@@ -16,7 +16,6 @@ function getCategories($con) {
 }
 
 
-// Create operation
 if (isset($_POST['add_article'])) {
     $titre = $_POST['titre'];
     $Contenu_arti = $_POST['Contenu_arti'];
@@ -25,15 +24,19 @@ if (isset($_POST['add_article'])) {
     $ID_user = $_POST['ID_user'];
     $ID_Category = $_POST['ID_Category'];
 
-    $target_dir = "images/";
+    $target_dir = "../../../blog/img/";
     $target_file = $target_dir . basename($_FILES["image"]["name"]);
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-    $image_path = $target_dir . uniqid() . '.' . $imageFileType;
+    $unique_identifier = uniqid('', true);
+    $image_path = $target_dir . $unique_identifier . '.' . $imageFileType;
 
     if (move_uploaded_file($_FILES["image"]["tmp_name"], $image_path)) {
+        // Construct the image path for database storage
+        $image_path_for_db = "blog/img/" . $unique_identifier . "." . $imageFileType;
+
         $stmt = $con->prepare("INSERT INTO articles (Titre, image_path, Contenu_arti, subtitle, Date_created, ID_user, ID_Category) VALUES (:titre, :image_path, :Contenu_arti, :subtitle, :Date_created, :ID_user, :ID_Category)");
         $stmt->bindParam(':titre', $titre);
-        $stmt->bindParam(':image_path', $image_path);
+        $stmt->bindParam(':image_path', $image_path_for_db);
         $stmt->bindParam(':Contenu_arti', $Contenu_arti);
         $stmt->bindParam(':subtitle', $subtitle);
         $stmt->bindParam(':Date_created', $Date_created);
@@ -55,6 +58,7 @@ if (isset($_POST['add_article'])) {
 // Read operation (to display existing articles in a table)
 $stmt = $con->query("SELECT * FROM articles");
 $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 <!DOCTYPE html>

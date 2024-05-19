@@ -10,7 +10,7 @@ section{
     margin-left: 305px;
 }
 .articles-table{
-    margin-top: 160px;
+    margin-top: 80px;
     width: 78%;
     margin-left: 130px;
     z-index: -1;
@@ -60,10 +60,10 @@ table {
 
 
  .pagination {
-    position: absolute;
-    margin-top: 550px;
+    position:fixed;
     text-align: center;
-    margin-left: 600px;
+    bottom: 0px;
+    left: 50%;
     color: #007bff;
 }
 

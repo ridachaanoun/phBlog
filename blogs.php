@@ -39,7 +39,7 @@
             <div class="cards2">
                 <?php 
                 // Slice the array to get only the first nine elements
-                $limitedRows = array_slice($rows, 0, 9);
+                $limitedRows = array_slice($rows, 0, 50);
                 foreach ($limitedRows as $row): 
                     // Fetch category information for the current article
                     $stmt = $conn->prepare("SELECT * FROM Categories WHERE ID_Category = :id_category");
@@ -56,10 +56,11 @@
                             <!-- Display category name -->
                             <h5><?php echo htmlspecialchars($category_row["Categoryname"], ENT_QUOTES, 'UTF-8'); ?></h5>
                         </div>
+                        
                         <div class="card-body">
                             <h3><?php echo htmlspecialchars($row->Titre, ENT_QUOTES, 'UTF-8'); ?></h3>
                             <p class="card-text"><?php echo htmlspecialchars($row->Contenu_arti, ENT_QUOTES, 'UTF-8'); ?></p>
-                            <p class="Read-more">Read more ></p>
+                            <p class="Read-more"><a href="signup_login/Blog-Post.php?post_id=<?php echo $row->ID_arti ;?>">Read more ></a></p>
                         </div>
                     </div>
                 </div>

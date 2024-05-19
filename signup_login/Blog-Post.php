@@ -2,6 +2,9 @@
 require "../connection.php";
 session_start();
 
+if (isset($_GET["post_id"])) {
+    $_SESSION["id_art"]=$_GET["post_id"];
+}
 // add like 
 if(isset($_POST["like"])){
     try {
@@ -33,7 +36,7 @@ if(isset($_POST["like"])){
                 ':ID_user' => $_SESSION["ID_user"],
                 ':ID_arti' => $_SESSION["id_art"]
             ]);
-            echo "Like added successfully";
+            // echo "Like added successfully";
 
         }
 
@@ -53,6 +56,7 @@ $articleStmt = $conn->prepare("SELECT * FROM articles WHERE ID_arti = :id_arti")
 $articleStmt->execute([':id_arti' => $_SESSION["id_art"]]);
 $articles_row = $articleStmt->fetch(PDO::FETCH_ASSOC);
 
+
 if (!$articles_row) {
     die("Error fetching article data");
 }
@@ -67,7 +71,7 @@ if (!$user_row) {
 }
 
 // Add comment
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if (isset($_POST["add"])) {
     $comment = $_POST['comment'];
     $response = [];
 
@@ -104,7 +108,8 @@ $commentsStmt = $conn->prepare("
 $commentsStmt->execute([':id_arti' => $_SESSION["id_art"]]);
 $comments = $commentsStmt->fetchAll(PDO::FETCH_OBJ);
 
-$style =""
+$style ="";
+
 ?>
 
 
@@ -122,13 +127,13 @@ $style =""
         <nav>
             <ul class="About-us">
                 <li><a href="#">About Us</a></li>
-                <li><a href="#">Blog</a></li>
+                <li><a href="../blogs.php">Blog</a></li>
                 <li>
 
                 </li>
             </ul>
             <h2 class="logo"><a href=""> Logo</a></h2>
-            <span class="sign-up"> <a href="signUp.html">Main</a> </span>
+            <span class="sign-up"> <a href="../index.php">Main</a> </span>
         </nav>
         <?php echo $style ;?>
     </header>
@@ -159,9 +164,10 @@ $style =""
                 </div>
             </div>
         </section>
+        <!-- data of post -->
         <section class="blog-content">
             <div class="container">
-                <img class="blogimg" src="img/blogimg" alt="">
+                <img class="blogimg" src="../<?php echo $articles_row["image_path"];?>" alt="">
                 <div class="blacklike-and-comment">
                     <!-- show likeCount -->
                     <span><img src="icons/black-like.svg" alt=""><?php echo $userLiked ;?></span>
@@ -200,6 +206,7 @@ $style =""
             </div>
         </section>
         <section>
+            <!-- add comment -->
             <form class="add-comment" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                 <p class="commentes">Comments</p>
                 <p class="submit-comment"> Submit a comment</p>
@@ -223,6 +230,5 @@ $style =""
                 <li>Cookies Settings</li>
             </ul>
         </div>
-
 </body>
 </html>

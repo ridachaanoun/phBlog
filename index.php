@@ -2,7 +2,7 @@
 
 <?php 
     require "connection.php";
-
+    session_start();
     // Initialize $rows to an empty array
     $rows = [];
 
@@ -14,6 +14,9 @@
         echo "Error: " . $e->getMessage();
         
     }
+    // if(isset()){
+
+    // }
 ?>
 
 <!DOCTYPE html>
@@ -101,7 +104,7 @@
                         <div class="card-body">
                             <h3><?php echo htmlspecialchars($row->Titre, ENT_QUOTES, 'UTF-8'); ?></h3>
                             <p class="card-text"><?php echo htmlspecialchars($row->Contenu_arti, ENT_QUOTES, 'UTF-8'); ?></p>
-                            <p class="Read-more">Read more ></p>
+                            <p class="Read-more"><a href="signup_login/Blog-Post.php?post_id=<?php echo $row->ID_arti ;?>">Read more ></a></p>
                         </div>
                     </div>
                 </div>

@@ -76,7 +76,7 @@ bottom: 25px;
     width: 76.5vw;
     border-radius: 5px;
     color: white;
-    margin-top: 80px;
+    margin-top: 10px;
     position: absolute;
    margin-left: 255px;
    padding: 5px;
@@ -99,4 +99,9 @@ bottom: 25px;
      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: center;
     padding: 10px;
+}
+.Contenu_arti{
+    max-width: 200px;
+    white-space: nowrap;
+    overflow-y: hidden;
 }

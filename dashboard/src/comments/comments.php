@@ -61,8 +61,8 @@ $totalPages = ceil($totalComments / $commentsPerPage);
 </head>
 
 <body>
-    <?php include '../sidebar.php'; ?>
-    <?php include '../navbar.php'; ?>
+    <?php include '../aside2.php'; ?>
+
     <section class="expression">
 <p>View,Delete,You can use all features as Admin!!</p>
 </section>
