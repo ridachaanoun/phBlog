@@ -48,9 +48,9 @@ if (isset($_POST['delete'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/test.css">
+    <link rel="stylesheet" href="../css/Test.css">
     <link rel="stylesheet" href="../output.css">
-    <link rel="stylesheet" href="../css/user.css">
+    <link rel="stylesheet" href="../css/User.css">
     <style>
         .container tbody tr button {
             border: none;
@@ -73,8 +73,8 @@ if (isset($_POST['delete'])) {
 </head>
 
 <body>
-    <?php include '../sidebar.php'; ?>
-    <?php include '../navbar.php'; ?>
+    <?php include '../aside2.php'; ?>
+
     <section class="expression">
 <p>View,Delete,You can use all features as Admin!!</p>
 </section>
@@ -105,16 +105,17 @@ if (isset($_POST['delete'])) {
                         <td><?php echo $article['ID_arti']; ?></td>
                         <td>
                             <?php
-                            $imagePath = $article['image_path'];
+                            // $imagePath = $article['image_path'];
+                            $imagePath = '../../../' . $article['image_path']; 
                             if (file_exists($imagePath)) {
-                                echo '<img src="' . $imagePath . '" style="width: 100px; height: auto;">';
+                                echo '<img src="'. $imagePath . '" style="width: 100px; height: auto;">';
                             } else {
                                 echo 'Image not found: ' . $imagePath;
                             }
                             ?>
                         </td>
                         <td><?php echo $article['Titre']; ?></td>
-                        <td><?php echo $article['Contenu_arti']; ?></td>
+                        <td class="Contenu_arti"><?php echo $article['Contenu_arti']; ?></td>
                         <td><?php echo $article['subtitle']; ?></td>
                         <td><?php echo $article['Date_created']; ?></td>
                         <td><?php echo $article['ID_user']; ?></td>

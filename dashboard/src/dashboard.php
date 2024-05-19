@@ -13,7 +13,7 @@
     </style>
 </head>
 <body>
-    <?php include 'navbar.php' ?>
+    
     <?php include 'sidebar.php' ?>
 
     <div class="containerr">
@@ -41,17 +41,17 @@
             <div class="cardd ">
             &nbsp;&nbsp;
                <img src="./images/homte.png"></br>
-               <button><a href="/phBlog/src/dashboard.php">Dashboard<svg fill="white" width="15px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><title/><g data-name="1" id="_1"><path d="M202.1,450a15,15,0,0,1-10.6-25.61L365.79,250.1,191.5,75.81A15,15,0,0,1,212.71,54.6l184.9,184.9a15,15,0,0,1,0,21.21l-184.9,184.9A15,15,0,0,1,202.1,450Z"/></g></svg></a></button>
+               <button><a href="dashboard.php">Dashboard<svg fill="white" width="15px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><title/><g data-name="1" id="_1"><path d="M202.1,450a15,15,0,0,1-10.6-25.61L365.79,250.1,191.5,75.81A15,15,0,0,1,212.71,54.6l184.9,184.9a15,15,0,0,1,0,21.21l-184.9,184.9A15,15,0,0,1,202.1,450Z"/></g></svg></a></button>
             </div>
             <!-- Card 2 -->
             <div class="cardd">
                <img src="./images/users.png">
-               </br><a href="/phBlog/src/users/users.php"><button>Users <svg fill="white" width="15px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><title/><g data-name="1" id="_1"><path d="M202.1,450a15,15,0,0,1-10.6-25.61L365.79,250.1,191.5,75.81A15,15,0,0,1,212.71,54.6l184.9,184.9a15,15,0,0,1,0,21.21l-184.9,184.9A15,15,0,0,1,202.1,450Z"/></g></svg></a></button>
+               </br><a href="users/users.php"><button>Users <svg fill="white" width="15px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><title/><g data-name="1" id="_1"><path d="M202.1,450a15,15,0,0,1-10.6-25.61L365.79,250.1,191.5,75.81A15,15,0,0,1,212.71,54.6l184.9,184.9a15,15,0,0,1,0,21.21l-184.9,184.9A15,15,0,0,1,202.1,450Z"/></g></svg></a></button>
             </div>
             <!-- Card 3 -->
             <div class="cardd">
                <img src="./images/shooww.png">
-           </br><a href="/phBlog/src/articles/articles.php"><button>Articles <svg fill="white" width="15px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><title/><g data-name="1" id="_1"><path d="M202.1,450a15,15,0,0,1-10.6-25.61L365.79,250.1,191.5,75.81A15,15,0,0,1,212.71,54.6l184.9,184.9a15,15,0,0,1,0,21.21l-184.9,184.9A15,15,0,0,1,202.1,450Z"/></g></svg></a></button>
+           </br><a href="articles/articles.php"><button>Articles <svg fill="white" width="15px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><title/><g data-name="1" id="_1"><path d="M202.1,450a15,15,0,0,1-10.6-25.61L365.79,250.1,191.5,75.81A15,15,0,0,1,212.71,54.6l184.9,184.9a15,15,0,0,1,0,21.21l-184.9,184.9A15,15,0,0,1,202.1,450Z"/></g></svg></a></button>
             </div>
             
         </div>
@@ -60,12 +60,12 @@
             <div class="cardd ">
             &nbsp;&nbsp;
             <img src="./images/again.png">
-           </br><a href="/phBlog/src/comments/comments.php"><button>Comments<svg fill="white" width="15px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><title/><g data-name="1" id="_1"><path d="M202.1,450a15,15,0,0,1-10.6-25.61L365.79,250.1,191.5,75.81A15,15,0,0,1,212.71,54.6l184.9,184.9a15,15,0,0,1,0,21.21l-184.9,184.9A15,15,0,0,1,202.1,450Z"/></g></svg></a></button>
+           </br><a href="comments/comments.php"><button>Comments<svg fill="white" width="15px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><title/><g data-name="1" id="_1"><path d="M202.1,450a15,15,0,0,1-10.6-25.61L365.79,250.1,191.5,75.81A15,15,0,0,1,212.71,54.6l184.9,184.9a15,15,0,0,1,0,21.21l-184.9,184.9A15,15,0,0,1,202.1,450Z"/></g></svg></a></button>
             </div>
             <!-- Card 2 -->
             <div class="cardd">
                <img src="./images/dating-categories.jpg">
-               </br><a href="/phBlog/src/categories/categories.php"><button>Categories<svg fill="white" width="15px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><title/><g data-name="1" id="_1"><path d="M202.1,450a15,15,0,0,1-10.6-25.61L365.79,250.1,191.5,75.81A15,15,0,0,1,212.71,54.6l184.9,184.9a15,15,0,0,1,0,21.21l-184.9,184.9A15,15,0,0,1,202.1,450Z"/></g></svg></a></button>
+               </br><a href="categories/categories.php"><button>Categories<svg fill="white" width="15px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><title/><g data-name="1" id="_1"><path d="M202.1,450a15,15,0,0,1-10.6-25.61L365.79,250.1,191.5,75.81A15,15,0,0,1,212.71,54.6l184.9,184.9a15,15,0,0,1,0,21.21l-184.9,184.9A15,15,0,0,1,202.1,450Z"/></g></svg></a></button>
             </div>
           
             

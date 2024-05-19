@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $con = new PDO('mysql:host=localhost;dbname=blog_db', 'root', "");
 $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -10,8 +12,8 @@ function getUsersWithRoles($con)
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-if (isset($_GET['ID_user'])) {
-    $ID_user = $_GET['ID_user'];
+if (isset($_SESSION["ID_user"] )) {
+    $ID_user = $_SESSION["ID_user"] ;
     $stmt = $con->prepare("SELECT u.*, r.role_name FROM users u INNER JOIN roles r ON u.ID_role = r.ID_role WHERE ID_user = :ID_user");
     $stmt->bindParam(':ID_user', $ID_user);
     $stmt->execute();
@@ -32,12 +34,11 @@ if (isset($_GET['ID_user'])) {
 
 </head>
 <body>
-    <?php include '../sidebar.php'; ?>
-    <?php include '../navbar.php'; ?>
+    <?php include '../aside2.php'; ?>
     <div class="container scrollable-container">
 
         <h2>Edit User</h2>
-        <form method="post" action="update.php" class="max-w-md mx-auto">
+        <form method="post" action="../users/update.php" class="max-w-md mx-auto">
             <input type="hidden" name="ID_user" value="<?php echo $user['ID_user']; ?>">
             <div class="mb-4">
                 <label for="username" class="block font-semibold mb-2">Username:</label><br>

@@ -14,12 +14,12 @@
      <hr >
      <div class="items">
    
-     <li><a href="dashboard.php" class="claso"><img src="./images/homte.png"><span>Dashboard</span></a></li>
-        <li><a href="users/users.php" class="claso"><img src="./images/users.png"><span>Users</span></a></li>
-        <li><a href="articles/articles.php" class="claso"><img src="./images/shooww.png"><span>Articles</span></a></li>
-        <li><a href="comments/comments.php" class="claso" data-page="./comments/comments.php"><img src="./images/again.png"><span>Comments</span></a></li>
-        <li><a href="categories/categories.php" class="claso" data-page="categories/categories.php"><img src="./images/dating-categories.jpg"><span>Categories</span></a></li>
-        <li><a href="setting/profile.php" class="claso" data-page="setting/profile.php"><img src="images/setting.png"><span>Setting</span></a></li>
+     <li><a href="../dashboard.php" class="claso"><img src="./images/homte.png"><span>Dashboard</span></a></li>
+        <li><a href="../users/users.php" class="claso"><img src="./images/users.png"><span>Users</span></a></li>
+        <li><a href="../articles/articles.php" class="claso"><img src="./images/shooww.png"><span>Articles</span></a></li>
+        <li><a href="../comments/comments.php" class="claso" data-page="./comments/comments.php"><img src="./images/again.png"><span>Comments</span></a></li>
+        <li><a href="../categories/categories.php" class="claso" data-page="categories/categories.php"><img src="./images/dating-categories.jpg"><span>Categories</span></a></li>
+        <li><a href="../setting/profile.php" class="claso" data-page="setting/profile.php"><img src="images/setting.png"><span>Setting</span></a></li>
     </div>
 </ul>
     </aside>
