@@ -28,7 +28,13 @@
     <link rel="stylesheet" href="blog/css/blogs.css">
 </head>
 <body>
-
+<main>
+        <!-- First Section -->
+        <section class="first-section">
+            <div>
+                <img class="im-header" src="blog/img/Discover the Latest and Greatest Blog Posts.png" alt="">
+            </div>
+            <div class="title">
                 <div>
                     <h1>Discover the Latest and<br> Greatest Blog Posts</h1>
                 </div>
