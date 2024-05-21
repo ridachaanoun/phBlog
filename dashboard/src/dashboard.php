@@ -15,7 +15,7 @@
 <body>
     
     <?php include 'sidebar.php' ?>
-
+    <?php include 'navbar.php'; ?>
     <div class="containerr">
         <div class="grid">
             <!-- Card 1 -->
