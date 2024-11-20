@@ -30,3 +30,7 @@ Welcome to the personal blog project created by our web development company. Thi
    ```bash
    git clone https://github.com/abdo0302/Blog-news.git
 
+
+### Configure the Database
+1. Create a MySQL database named blog_db.sql
+1. Import the blog_db.sqll file into your database.
